@@ -10,7 +10,10 @@ import Adafruit_BBIO.GPIO as GPIO
 import time
 
 LEDs=3
-
+BUTTON="P8_19"
+BUZZER="P8_13"
+GPIO.setup(BUTTON,GPIO.IN)
+GPIO.setup(BUZZER,GPIO.OUT)
 for i in range(LEDs):
     j=15+i
     GPIO.setup("P8_%d" % j, GPIO.OUT)
@@ -24,3 +27,9 @@ while True:
         j=15+i
         GPIO.output("P8_%d" % j, GPIO.LOW)
         time.sleep(0.25)
+    if(GPIO.input(BUTTON)):
+        GPIO.output(BUZZER,GPIO.HIGH)
+    else:
+        GPIO.output(BUZZER,GPIO.LOW)
+
+            

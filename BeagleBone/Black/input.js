@@ -8,7 +8,7 @@
 ////////////////////////////////////////
 const b = require('bonescript');
 
-const outputPin = "P9_14";
+const outputPin = "P8_13";
 const inputPin  = "P8_19";
 const ledPin    = "USR3";
 const mydelay = 250;
